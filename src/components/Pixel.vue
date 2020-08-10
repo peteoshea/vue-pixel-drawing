@@ -1,6 +1,6 @@
 <template>
   <div
-    @click="changeColour(colour)"
+    @click="interactive && changeColour(colour)"
     :class="['pixel', colour, current ? 'current' : '']"
   ></div>
 </template>
@@ -31,15 +31,16 @@
 
 <script>
 export default {
-  name: "Pixel",
+  name: 'Pixel',
   props: {
     colour: String,
-    current: Boolean
+    current: Boolean,
+    interactive: Boolean,
   },
   methods: {
     changeColour: function(colour) {
-      this.$root.$emit("updatecolour", colour);
-    }
-  }
+      this.$root.$emit('updatecolour', colour);
+    },
+  },
 };
 </script>
