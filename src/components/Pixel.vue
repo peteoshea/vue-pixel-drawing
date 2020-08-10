@@ -1,8 +1,5 @@
 <template>
-  <div
-    @click="interactive && changeColour(colour)"
-    :class="['pixel', colour, current ? 'current' : '']"
-  ></div>
+  <div @click="handleClick" :class="['pixel', colour, current ? 'current' : '']"></div>
 </template>
 
 <style scoped>
@@ -31,16 +28,22 @@
 
 <script>
 export default {
-  name: 'Pixel',
+  name: "Pixel",
   props: {
     colour: String,
     current: Boolean,
-    interactive: Boolean,
+    isInColourPicker: Boolean,
+    isInCanvas: Boolean,
+    index: Number
   },
   methods: {
-    changeColour: function(colour) {
-      this.$root.$emit('updatecolour', colour);
-    },
-  },
+    handleClick: function() {
+      if (this.isInColourPicker) {
+        this.$root.$emit("updatecolour", this.colour);
+      } else if (this.isInCanvas) {
+        this.$root.$emit("clickedpixel", this.index);
+      }
+    }
+  }
 };
 </script>

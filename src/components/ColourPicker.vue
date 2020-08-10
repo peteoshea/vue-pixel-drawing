@@ -1,9 +1,9 @@
 <template>
   <div class="colour-picker">
-    <Pixel interactive colour="white" :current="colour == 'white' ? true : false" />
-    <Pixel interactive colour="lightblue" :current="colour == 'lightblue' ? true : false" />
-    <Pixel interactive colour="blue" :current="colour == 'blue' ? true : false" />
-    <Pixel interactive colour="darkblue" :current="colour == 'darkblue' ? true : false" />
+    <Pixel isInColourPicker colour="white" :current="colour == 'white' ? true : false" />
+    <Pixel isInColourPicker colour="lightblue" :current="colour == 'lightblue' ? true : false" />
+    <Pixel isInColourPicker colour="blue" :current="colour == 'blue' ? true : false" />
+    <Pixel isInColourPicker colour="darkblue" :current="colour == 'darkblue' ? true : false" />
   </div>
 </template>
 
