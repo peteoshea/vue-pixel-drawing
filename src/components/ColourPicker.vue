@@ -1,19 +1,22 @@
 <template>
   <div>
-    <Pixel color="white" />
-    <Pixel color="lightblue" />
-    <Pixel color="blue" />
-    <Pixel color="darkblue" />
+    <Pixel colour="white" :current="colour == 'white' ? true : false" />
+    <Pixel colour="lightblue" :current="colour == 'lightblue' ? true : false" />
+    <Pixel colour="blue" :current="colour == 'blue' ? true : false" />
+    <Pixel colour="darkblue" :current="colour == 'darkblue' ? true : false" />
   </div>
 </template>
 
 <script>
-import Pixel from './Pixel';
+import Pixel from "./Pixel";
 
 export default {
-  name: 'ColourPicker',
-  components: {
-    Pixel,
+  name: "ColourPicker",
+  props: {
+    colour: String
   },
+  components: {
+    Pixel
+  }
 };
 </script>

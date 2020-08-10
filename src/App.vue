@@ -1,20 +1,30 @@
 <template>
   <div id="app">
-    <ColourPicker />
+    <ColourPicker :colour="colour" />
     <Canvas />
   </div>
 </template>
 
 <script>
-import Canvas from './components/Canvas.vue';
-import ColourPicker from './components/ColourPicker'
+import Canvas from "./components/Canvas.vue";
+import ColourPicker from "./components/ColourPicker";
 
 export default {
-  name: 'App',
+  name: "App",
+  data: function() {
+    return {
+      colour: "white"
+    };
+  },
   components: {
     Canvas,
-    ColourPicker,
+    ColourPicker
   },
+  mounted() {
+    this.$root.$on("updatecolour", colour => {
+      this.colour = colour;
+    });
+  }
 };
 </script>
 

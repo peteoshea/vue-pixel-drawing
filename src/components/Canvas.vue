@@ -1,17 +1,17 @@
 <template>
   <div class="canvas">
-    <Pixel v-for="n in 30 * 30" :key="n" color="blue" />
+    <Pixel v-for="n in 30 * 30" :key="n" colour="blue" />
   </div>
 </template>
 
 <script>
-import Pixel from './Pixel';
+import Pixel from "./Pixel";
 
 export default {
-  name: 'Canvas',
+  name: "Canvas",
   components: {
-    Pixel,
-  },
+    Pixel
+  }
 };
 </script>
 
