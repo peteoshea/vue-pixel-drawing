@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="colour-picker">
     <Pixel interactive colour="white" :current="colour == 'white' ? true : false" />
     <Pixel interactive colour="lightblue" :current="colour == 'lightblue' ? true : false" />
     <Pixel interactive colour="blue" :current="colour == 'blue' ? true : false" />
@@ -20,3 +20,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.colour-picker {
+  margin-right: 20px;
+}
+</style>

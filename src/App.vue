@@ -6,35 +6,34 @@
 </template>
 
 <script>
-import Canvas from "./components/Canvas.vue";
-import ColourPicker from "./components/ColourPicker";
+import Canvas from './components/Canvas.vue';
+import ColourPicker from './components/ColourPicker';
 
 export default {
-  name: "App",
+  name: 'App',
   data: function() {
     return {
-      colour: "white"
+      colour: 'white',
     };
   },
   components: {
     Canvas,
-    ColourPicker
+    ColourPicker,
   },
   mounted() {
-    this.$root.$on("updatecolour", colour => {
+    this.$root.$on('updatecolour', (colour) => {
       this.colour = colour;
     });
-  }
+  },
 };
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 98vh;
 }
 </style>
